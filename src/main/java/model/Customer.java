@@ -17,9 +17,9 @@ import javax.persistence.ParameterMode;
 
 @Entity
 @Cacheable(true)
-@NamedQueries({ @NamedQuery(name = Customer.FIND_ALL, query = "SELECT c FROM Customer c"),
-		@NamedQuery(name = Customer.FIND_VINCENT, query = "SELECT c FROM Customer c WHERE c.firstName = 'Vincent'"),
-		@NamedQuery(name = Customer.FIND_WITH_PARAM, query = "SELECT c FROM Customer c WHERE c.firstName = :fname") })
+@NamedQueries({ @NamedQuery(name = Customer.FIND_ALL, query = "SELECT c FROM model.Customer c"),
+		@NamedQuery(name = Customer.FIND_VINCENT, query = "SELECT c FROM model.Customer c WHERE c.firstName = 'Vincent'"),
+		@NamedQuery(name = Customer.FIND_WITH_PARAM, query = "SELECT c FROM model.Customer c WHERE c.firstName = :fname") })
 @NamedNativeQuery(name = Customer.NATIVE_FIND_ALL, query = "SELECT * FROM customer")
 @NamedStoredProcedureQuery(name = Customer.ARCHIVE, procedureName = "archive_customer", parameters = {
 		@StoredProcedureParameter(name = "p_email", mode = ParameterMode.IN, type = String.class) })
